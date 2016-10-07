@@ -1,0 +1,25 @@
+{
+  "name": "papillon",
+  "version": "0.0.1",
+  "description": "A theme, to use with Hugo static site generator",
+  "license": "MIT",
+  "homepage": "https://github.com/leonard7e/papillon#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonard7e/papillon.git"
+  },
+  "bugs": {
+    "url": "https://github.com/leonard7e/papillon/issues"
+  },
+  "dependencies": {
+    "angular": "^1.5.8"
+  },
+  "author": "Leonard Siebeneicher",
+  "devDependencies": {
+    "grunt": "latest",
+    "typescript": "latest",
+    "grunt-typescript": "latest",
+    "grunt-contrib-sass": "latest",
+    "grunt-contrib-watch": "latest"
+  }
+}
