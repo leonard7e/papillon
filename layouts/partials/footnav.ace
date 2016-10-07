@@ -1,0 +1,4 @@
+nav
+  {{ range where .Site.Pages "Type" "footer" }}
+  a href={{ .Permalink }} {{ .Title }}
+  {{ end }}

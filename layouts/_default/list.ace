@@ -1,0 +1,12 @@
+= content main
+  {{ range .Data.Pages }}
+  ul
+    li
+      a href={{ .Permalink }} {{ .Title }}
+  {{ end }}
+
+= content title
+  {{ .Title }}
+
+= content filter
+  {{ partial "filter" . }}

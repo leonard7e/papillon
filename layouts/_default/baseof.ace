@@ -1,0 +1,17 @@
+= doctype html
+html lang=de
+  head
+    meta charset=utf-8
+    title
+      = yield title
+  body
+    main
+      header
+        h1
+          = yield title
+      {{ partial "main_navigation" . }}
+      = yield filter
+      section
+        = yield main
+    footer
+      {{ partial "footnav" . }}

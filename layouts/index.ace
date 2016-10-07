@@ -1,0 +1,4 @@
+= content main
+  {{ range where .Data.Pages "Type" "home" }}
+  {{ .Content }}
+  {{ end }}
