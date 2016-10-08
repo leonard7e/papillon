@@ -7,7 +7,7 @@ module.exports = function(grunt) {
     typescript: {
       base: {
         src: ['typescript/papillon.ts','typescript/**/*.ts'],
-        dest: 'tmp/js',
+        dest: 'static/js-gen',
         options: {
           module: 'amd', //or commonjs
           target: 'es5', //or es3
@@ -19,10 +19,14 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         options: {
-          sourcemap: 'none'
+          cacheLocation: '/tmp/papillon/sass-cache',
+          sourcemap: 'none',
+          require: [
+            './sass/papillon.rb',
+          ]
         },
         files: {
-          'tmp/css/papillon.css': 'sass/papillon.sass'
+          'static/css-gen/papillon.css': 'sass/papillon.sass'
         }
       }
     },
@@ -33,7 +37,7 @@ module.exports = function(grunt) {
         tasks: ['typescript']
       },
       sass: {
-        files: ['sass/*.sass'],
+        files: ['sass/*.sass', 'sass/*.scss', 'sass/**/*.sass', 'sass/**/*.scss'],
         tasks: ['sass']
       }
     }

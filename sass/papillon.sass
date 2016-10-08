@@ -1,3 +1,29 @@
+// Konfiguration
+@import "konfiguration"
+@import "werkzeug/index"
+@import "seitenlayout"
+@import "headerlayout"
+@import "navigation"
+
+
 html
-  background-color: wheat
-  
+  background-color: farbe(hintergrund, hinten)
+
+main > header
+  background-color: farbe(hintergrund, kopf)
+
+main > section
+  background-color: farbe(hintergrund, haupttext)
+
+@media (max-width: breakp(l))
+  main > section,
+  main > header
+    border-bottom-right-radius: 0
+
+@media (min-width: breakp(l) + 1px)
+  main > section
+    border-bottom-right-radius: dimension(kopfhoehe)
+
+@media (min-width: breakp(h) + 1px)
+  main > header
+    border-bottom-right-radius: dimension(kopfhoehe)

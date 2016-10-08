@@ -1,0 +1,27 @@
+main > header > .Container
+  display: flex
+  flex-direction: row
+  align-items: flex-start
+
+main > header > .Container> .Logo
+  height: dimension(kopfhoehe)
+
+main > header > .Container> .Logo,
+main > header > .Container> .HamburgerMenu
+  display: flex
+  flex-direction: column
+  justify-content: space-around
+
+
+main > header > .Container> .HamburgerMenu
+  width: dimension(kopfhoehe)
+  height: dimension(kopfhoehe)
+  margin: 0 abstand(0)
+
+main > header h1,
+main > header h2
+  margin-top: 0
+  margin-bottom: 0
+
+
+// @media (min-width: breakp(h) + 1px)

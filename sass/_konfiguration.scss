@@ -1,0 +1,28 @@
+$rrand: 24px; // Rechter Rand von 'header' bis zum Rand von 'main'
+
+$konfiguration: (
+  // Responsive Design
+  breakpoint: (
+    s: 450px,
+    m: 600px,
+    h: 750px - $rrand, // header width
+    l: 750px,
+    xl: 900px,
+  ),
+  // Benutzte Dimensionen hier herleiten
+  dimension: (
+    einheit: $rrand,
+    kopfhoehe: 48px
+  ),
+  // Benutzte Farben
+  farbe: (
+    hintergrund: (
+      kopf: brown,
+      haupttext: wheat,
+      hinten: lightblue
+    ),
+    text: (
+      haupttext: black
+    )
+  )
+);

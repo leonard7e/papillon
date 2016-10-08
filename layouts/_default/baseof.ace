@@ -1,17 +1,25 @@
 = doctype html
 html lang=de
   head
-    meta charset=utf-8
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+
     title
       = yield title
+    link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css-gen/papillon.css"
   body
     main
       header
-        h1
-          = yield title
-      {{ partial "main_navigation" . }}
-      = yield filter
+        .Container
+          .HamburgerMenu
+            div &#9776;
+          .Logo
+            h1 Ab und Durch
+        nav
+          {{ partial "main_navigation" . }}
+
       section
+        = yield title
         = yield main
     footer
       {{ partial "footnav" . }}

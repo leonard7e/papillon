@@ -6,7 +6,5 @@
   {{ end }}
 
 = content title
-  {{ .Title }}
-
-= content filter
-  {{ partial "filter" . }}
+  h2 {{ .Title }}
+  

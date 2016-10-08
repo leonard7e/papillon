@@ -1,0 +1,16 @@
+@function breakp($bp) {
+  @return map-get(map-get($konfiguration, breakpoint), $bp);
+}
+
+@function dimension($g) {
+  @return map-get(map-get($konfiguration, dimension), $g);
+}
+
+@function abstand($s) {
+  @return map-get(map-get($konfiguration, dimension), einheit) * goldenratio($s);
+}
+
+
+@function farbe($rubrik, $schluessel) {
+  @return map-get(map-get(map-get($konfiguration, farbe), $rubrik), $schluessel);
+}

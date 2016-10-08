@@ -1,0 +1,59 @@
+// Seitenlayout
+main > header
+  position: fixed
+  height: dimension(kopfhoehe)
+main > section
+  margin: 0
+
+@media (min-width: breakp(h) + 1px)
+  main > header
+    width: breakp(h)
+
+@media (min-width: breakp(l) + 1px)
+  main
+    width: breakp(l)
+  body > footer
+    width: breakp(l)
+
+@media (max-width: breakp(h))
+  main > header
+    width: 100%
+
+@media (max-width: breakp(l))
+  main,
+  body > footer
+    width: 100%
+
+
+// Ränder
+
+main > section
+  padding-top: calc(#{abstand(0)} + #{dimension(kopfhoehe)} )
+  padding-bottom: abstand(0)
+
+  @media (min-width: breakp(m) + 1px)
+    padding-left: abstand(-1)
+    padding-right: $rrand
+
+  @media (max-width: breakp(m))
+    padding-left: abstand(-1)
+    padding-right: abstand(-1)
+
+  @media (max-width: breakp(s))
+    padding-left: 0px
+    padding-right: 0px
+
+
+main > section :first-child
+  margin-top: 0
+
+main > section :last-child
+  margin-bottom: 0
+
+body > footer
+  margin-top: abstand(-2)
+  margin-bottom: abstand(-2)
+
+// Der Fuß
+body > footer > nav
+  text-align: center
