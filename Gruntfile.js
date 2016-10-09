@@ -4,18 +4,6 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    typescript: {
-      base: {
-        src: ['typescript/papillon.ts','typescript/**/*.ts'],
-        dest: 'static/js-gen',
-        options: {
-          module: 'amd', //or commonjs
-          target: 'es5', //or es3
-          rootDir: 'typescript'
-        }
-      }
-    },
-
     sass: {
       dist: {
         options: {
@@ -31,11 +19,17 @@ module.exports = function(grunt) {
       }
     },
 
+    copy: {
+      angular:
+        {
+          cwd: 'node_modules/angular/',
+          src: 'angular.min.js',
+          dest: 'static/js-gen/',
+          expand: 'true'
+        }
+    },
+
     watch: {
-      typescript: {
-        files: ['typescript/**/*.ts'],
-        tasks: ['typescript']
-      },
       sass: {
         files: ['sass/*.sass', 'sass/*.scss', 'sass/**/*.sass', 'sass/**/*.scss'],
         tasks: ['sass']
@@ -43,12 +37,12 @@ module.exports = function(grunt) {
     }
   });
 
-  // Load the plugin that provides the "uglify" task.
-  grunt.loadNpmTasks('grunt-typescript');
+  // Load plugins.
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task(s).
-  grunt.registerTask('default', ['typescript', 'sass']);
+  grunt.registerTask('default', ['sass']);
 
 };

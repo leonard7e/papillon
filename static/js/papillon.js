@@ -1,5 +1,6 @@
-function greeter(person) {
-    return "Hello, " + person;
-}
-var user = "Jane User";
-document.body.innerHTML = greeter(user);
+// Mona JavaScript Basic File
+var app = angular.module("papillon", []);
+app.config(function($interpolateProvider){
+    $interpolateProvider.startSymbol('{[[');
+    $interpolateProvider.endSymbol(']]}');
+});
