@@ -1,2 +1,13 @@
+// Das Hamburger-Icon
+main > header > .Container > .HamburgerMenu
+  cursor: pointer
+  @include user_select(none)
+  outline: none
+
+// Das Menü
 main > header > nav
   display: none
+
+main > header > nav.Visible
+  width: dimension(navbreite)
+  display: block

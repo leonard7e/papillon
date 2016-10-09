@@ -5,6 +5,7 @@
 @import "headerlayout"
 @import "navigation"
 
+// Vieles von dem was hier unten steht wird später ausverlagert.
 
 html
   background-color: farbe(hintergrund, hinten)
@@ -27,3 +28,18 @@ main > section
 @media (min-width: breakp(h) + 1px)
   main > header
     border-bottom-right-radius: dimension(kopfhoehe)
+
+main > header > nav
+  background-color: green
+  color: wheat
+  line-height: 2rem
+  border-bottom-right-radius: dimension(kopfhoehe)
+
+main > header > nav li
+  margin-left: 1rem
+
+main > header > .Container > .HamburgerMenu
+  color: black
+
+main > header > .Container > .HamburgerMenu.Active
+  color: wheat

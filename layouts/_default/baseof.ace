@@ -13,13 +13,12 @@ html lang="de" ng-app="papillon"
     script src="{{ .Site.BaseURL }}/js/papillon.js" type="text/javascript"
   body
     main
-      header
+      header ng-controller="Hamburger"
         .Container
-          .HamburgerMenu
-            div &#9776;
+          {{ partial "hamburger" . }}
           .Logo
             h1 Ab und Durch
-        nav
+        nav ng-class="{Visible: sandwichActive}"
           {{ partial "main_navigation" . }}
 
       section
@@ -27,3 +26,4 @@ html lang="de" ng-app="papillon"
         = yield main
     footer
       {{ partial "footnav" . }}
+  script src="{{ .Site.BaseURL }}/js/Controller/Hamburger.js" type="text/javascript"

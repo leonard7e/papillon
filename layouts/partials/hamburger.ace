@@ -1,0 +1,2 @@
+.HamburgerMenu ng-class="{Active: sandwichActive}" ng-click="toggleSandwich()"
+  div &#9776;
